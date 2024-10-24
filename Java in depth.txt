@@ -1,0 +1,5 @@
+Learn Stream Collectors and Comparators
+
+callables dont take any arguement
+    - ()->{return 10;} IS VALID
+    - a -> return null; IS INVALID
