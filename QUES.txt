@@ -90,3 +90,460 @@ Sample Output:
 
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Brahmi and his gang have been chased by a group of police officers and are now  (CLASSIC BFS)
+trapped in a building with M×N rooms, arranged in a grid format. Each room is 
+connected to its adjacent rooms both horizontally and vertically, forming a 
+complex layout. Fortunately, some rooms in the building are designated as 
+"safe zones," providing a possible escape for Brahmi and his gang.
+
+The building's rooms are marked with the following values:
+    -1 : Danger Zone - an area that Brahmi and his gang cannot enter.
+    0 : Safe Zone - an area that provides a possible escape.
+    -2 : Occupied by a gang member.
+    
+Your task is to help Brahmi and his gang reach the nearest safe zones by 
+calculating the minimum distance from each gang member's room to a safe zone, 
+avoiding danger zones. If a gang member is unable to reach any safe zone, 
+mark their room with -2.
+
+Input Format:
+-------------
+Line-1 -> two integers M and N, size of the grid of rooms.
+Next M Lines -> N space separated integers, from this set [-2,-1,0] only.
+
+Output Format:
+--------------
+Print an integer as result.
+
+
+Sample Input-1:
+---------------
+4 4
+-2 -1 0 -2
+-2 -2 -2 -1
+-2 -1 -2 -1
+0 -1 -2 -2
+
+Sample Output-1:
+----------------
+3 -1 0 1
+2 2 1 -1
+1 -1 2 -1
+0 -1 3 4
+
+NOTE: Please refer the hint.
+HINT 1: FIND POSITIONS OF SAFE SPACES
+HINT 2: USE THOSE POSITIONS TO FIND PLACE WHICH OTHER GANG MEMBER OCCUPIED (USE A MATRIX FOR DIRECTION)
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+In a township of size N×N, each 1x1 area is either a villa or a swimming pool. 
+The layout of the township is represented as a 2D matrix of size N×N, 
+filled with 0's and 1's, where:
+    - 0 represents a swimming pool,
+    - 1 represents a villa.
+
+Your task is to identify a swimming pool such that its distance to the nearest 
+villa(s) is maximized, and return this distance.
+
+If the township contains only villas or only swimming pools, return -1.
+
+Note: The distance used in this problem is the Manhattan distance: the distance 
+between two cells (a0, b0) and (a1, b1) is defined as |a0 - a1| + |b0 - b1|
+
+Input Format:
+-------------
+- The first line contains an integer N, the size of the 2D matrix
+- The next N lines each contain N space-separated integers, either 0 or 1, 
+  representing the township matrix.
+
+Output Format:
+--------------
+Print an integer, representing the maximum distance from any swimming pool to 
+the nearest villa.
+
+
+Sample Input-1:
+---------------
+4
+1 0 1 1
+0 0 0 0
+1 0 1 0
+1 0 0 1
+
+Sample Output-1:
+----------------
+2
+
+Explanation: 
+------------
+The swimming pool at (1, 1) is with distance 2 from the nearest villas.
+
+
+Sample Input-2:
+---------------
+4
+1 0 0 0
+0 0 0 0
+1 0 0 0
+0 1 0 1
+
+Sample Output-2:
+----------------
+3
+
+Explanation: 
+------------
+The swimming pool at (0,3) or (1, 2) are with distance 3 from the nearest villas.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Mr. Febin is studying numbers with unique properties and is interested in 
+finding all AD Numbers within a specified range.
+
+An AD Number is a number where every pair of adjacent digits has an absolute 
+difference of exactly 1.
+
+Given two integers, start and end, identify all AD Numbers within the inclusive 
+range [start,end] and output them in ascending order.
+
+Constraints:
+------------
+0 <= start < end <2*10^9.
+ 
+Input Format:
+-------------
+Two space-separated integers, start and end, representing the range.
+
+Output Format:
+--------------
+A list of integers showing all AD Numbers in the given range.
+
+
+Sample Input-1:
+---------------
+0 15
+
+Sample Output-1:
+----------------
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+
+Explanation:
+------------
+All numbers in this list have adjacent digits differing by exactly 1.
+
+
+Sample Input-2:
+---------------
+25 65
+
+Sample Output-2:
+----------------
+[32, 34, 43, 45, 54, 56, 65]
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Ramu is given an array of numbers now he has to check for a super square matrix in the given array.
+
+A super square matrix is a matrix such that every row sum, every column sum, and both
+diagonal sums are all equal. 
+
+The integers in the magic square do not have to be distinct. 
+Every 1 x 1 grid is trivially a super square matrix 
+
+Given an m x n integer grid , return the size (i.e., the side length k ) of the largest super square matrix that can be found
+within this grid.
+
+
+
+Example 1:
+
+Input = 
+4 5
+7 1 4 5 6
+2 5 1 6 4
+1 5 4 3 2
+1 2 7 3 4
+Output: 3
+
+Explanation: 
+
+From the above array we have the following super square matrix of size 3 
+5 1 6 
+5 4 3
+2 7 3 
+
+
+
+The largest super square matrix has a size of 3.
+Every row sum, column sum, and diagonal sum of this magic square is equal to 12.
+- Row sums: 5+1+6 = 5+4+3 = 2+7+3 = 12
+- Column sums: 5+5+2 = 1+4+7 = 6+3+3 = 12
+- Diagonal sums: 5+4+3 = 6+4+2 = 12
+
+
+
+
+
+
+
+
+
+
+TOOOOOOOOOOOOOOOOOOOOOOOOOFAAAAAAAAAAAAAAAAAAAAAAAAAANIIIIIIIIIIIIIIIIIIIIIIIIII CODES
+
+
+
+Program1
+
+Gopal is given a string s, Now he has to remove duplicate letters so that every letter appears once and only once.
+
+He must make sure that the result produces should occur in the order given in string 
+
+Example 1:
+
+Input = bcabc
+Output = bca
+
+
+import java.util.*;
+class  Solution
+{
+	static void removeduplicate(String word)
+	{
+	LinkedHashMap<Character,Integer> charCount = new LinkedHashMap<Character,Integer>();
+ 	
+	for(int i=0;i<word.length();i++)
+		{
+		   if(charCount.get(word.charAt(i))==null)
+			   charCount.put(word.charAt(i),1);
+		   else
+			   charCount.put(word.charAt(i),charCount.get(word.charAt(i))+1);
+		
+		}
+	Set<Character> keys = charCount.keySet();
+	for(char c : keys)
+		System.out.print(c);
+
+
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		String word = sc.next();
+        new Solution().removeduplicate(word);
+	}
+}
+
+
+
+
+
+back end test cases
+
+case = 1
+input=ddccbbaa
+output=dcba
+
+case = 2
+input=ddabbaac
+output=dabc
+
+case = 3
+input=aaaabbbbccc
+output=abc
+
+case = 4
+input=aaaccccbbbbdddaaaa
+output=acbd
+
+case = 5
+input=abbccaaazzzeeekkkk
+output=abczek
+
+
+Program2
+
+Ragav is working with strings, which contain digits from [0-9] only.
+he has to find if given string is a downgraded string or not.
+
+A string is said to be a downgraded string, if the string follows the below rules:
+	- Divide the string S into two or more substrings, like sub[0],sub[1], sub[2],..,sub[n-1]. 
+	  If you append all the substrings should result in S,sub[0]+sub[1]+ sub[2]+..+sub[n-1] = S
+	  
+	- The numeric values of the substrings should be in decreasing order.
+	  i.e., sub[0] > sub[1] > .. > sub[n-1].
+	- The difference between each consecutive pair should be 1 only.
+	  i.e., sub[0]-sub[1] = sub[1]-sub[2] = .. = sub[n-2]-sub[n-1] = 1.
+
+Your task is to help Ragav to check the given numeric string is downgraded string or not. 
+If yes, print "true", Otherwise print "false".
+
+Input Format:
+-------------
+A String, numeric word.
+
+Output Format:
+--------------
+Print a boolean result.
+
+
+Sample Input-1:
+---------------
+004567
+
+Sample Output-1:
+----------------
+false
+
+Explanation:
+------------
+Numeric Word can be divided as follows: "004","5","6","7"
+Given word is not a downgraded string. 
+
+
+Sample Input-2:
+---------------
+1201100010
+
+Sample Output-2:
+----------------
+true
+
+Explanation:
+------------
+Numeric Word can be divided as follows: "12","011","00010"
+The numeric value of substrings are: 12, 11, 10
+
+
+Sample Input-3:
+---------------
+5040301
+
+Sample Output-3:
+----------------
+false
+
+Explanation:
+------------
+Numeric Word can be divided as follows: "5","04","03","01"
+The numeric value of substrings are: 5,4,3,1
+Rule-1 and Rule-2 are followed but Rule-3 is not followed.
+
+
+
+Sample Input-4:
+---------------
+99999998
+
+Sample Output-4:
+----------------
+true
+
+Explanation:
+------------
+Numeric Word can be divided as follows: "9999","9998".
+
+
+case =1
+input=9080701
+output=false
+
+case =2
+input=10009998
+output=true
+
+case =3
+input=11121111200011119111180011117000111161111511114011113000111120101111
+output=false
+
+case =4
+input=999998000997099060995994
+output=false
+
+
+
+
+import java.util.*;
+
+class SplitString {
+    public boolean splitString(String s) {
+        return isRemainingValid(s, null);
+    }
+    private boolean isRemainingValid(String s, Long previous) {
+        long current =0;
+        for(int i=0;i<s.length();i++) {
+            current = current * 10 + s.charAt(i)-'0';
+            if(current >= 10000000000L) return false;   // Avoid overflow
+            if(previous == null) {
+                if (isRemainingValid(s.substring(i+1), current)) 
+                    return true;
+            } else if(current == previous - 1 && (i==s.length()-1 || isRemainingValid(s.substring(i+1), current)))
+                return true;
+        }
+        return false;
+    }
+	
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		System.out.println(new SplitString().splitString(s));
+	}
+}
+
+
+#######################################################################################################################
+
+Mahalakshmi is participating in a treasure hunt that includes N boxes, each 
+numbered sequentially from 0 to N-1. Initially, all the boxes are locked with 
+unique passcodes, except for Box-0, which is unlocked.
+
+Each box in the treasure hunt contains a list of envelopes, with each envelope 
+holding the passcode to unlock a different box. The envelope is labeled with 
+the box number it can unlock.
+
+Mahalakshmi can open the boxes in any order, but she must start with Box-0.
+
+The goal of the treasure hunt is to unlock all the boxes. Your task is to 
+determine if Mahalakshmi can open every box and win the game.
+
+If she can unlock all the boxes, print "Win". Otherwise, print "Lost".
+
+Input Format:
+-------------
+Line-1: An integer, number of boxes.
+Next N lines: space separated integers, box numbers.
+
+Output Format:
+--------------
+Print a string value, Win or Lost
+
+
+Sample Input-1:
+---------------
+5
+1
+2
+3
+4
+3
+
+Sample Output-1:
+----------------
+Win
+
+Sample Input-2:
+---------------
+4
+1 3
+3 0 1
+2
+0
+
+Sample Output-2:
+----------------
+Lost

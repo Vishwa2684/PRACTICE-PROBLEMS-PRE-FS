@@ -134,4 +134,47 @@ Split the remaining package with 8 items into packages of sizes 4 and 4.
 After these operations, the package with the highest load has 8 items, 
     So the MaxLoad is 8.
 
+
+SOLUTION (BINARY SEARCH):
+
+		import java.util.*;
+
+		class Test{
+			
+			public static void main(String[] args){
+				int n,p,size;
+				Scanner sc = new Scanner(System.in);
+				
+				n = sc.nextInt(); 
+				p = sc.nextInt(); // maxsplits
+
+				sc.nextLine();
+				
+				int packages[] = new int[n];
+				for(int i=0;i<n;i++){
+					packages[i] = sc.nextInt();
+				}
+				
+				int l=1,r=Arrays.stream(packages).max().getAsInt(),res=r;
+				while(l<=r){
+					int mid = l+(r-l)/2;
+					int splits = 0;
+					
+					for(int packs:packages){
+						if(packs>mid){
+							splits += (packs-1)/mid;
+						}
+						
+					}
+					if(splits<=p){
+						res = mid;
+						r = mid-1;
+					}else{
+						l=mid+1;
+					}
+				}
+				
+				System.out.println(l);
+			}
+		}
 _________________________________________________________________________________________________________________________________________________________________________________________________________________
