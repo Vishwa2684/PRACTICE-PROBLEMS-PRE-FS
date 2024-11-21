@@ -675,3 +675,266 @@ Sample Output-2:
 11
 
 #################################################################################################################
+
+
+Shakuni playing 'Paramapadasopanam' game with Dharamaraja.
+Shakuni wants to win everytime. He has a boon that whenever he used to 
+roll the dice, the dice roll to show his desired number. 
+
+Rules
+--------
+The game is played with a cubic dice of 6 faces numbered 1 to 6.
+And Paramapadasopanam of size N*N.
+- Starting from square X = 1, reach the square N*N with some rolls of the dice 
+- Once Shakuni roll the dice, he will land on one of the followin squares only
+  X+1, X+2, X+3, X+4, X+5, X+6.
+- If current value at position X is not equal to -1, then there is a ladder 
+  or snake.
+- If the position of X is at the base of a ladder, the player must climb 
+  the ladder. Ladders go up only.
+- If the position of X is at the mouth of a snake, the player must go down 
+  the snake and come out through the tail. Snakes go down only.
+
+You have to findout, what would be the least number of rolls required 
+for shakuni to win.
+
+Note:
+Shakuni can only take a snake or ladder at most once per move: 
+if the tail of a snake or ladder is the start of another snake or ladder, 
+you do not continue moving.
+
+
+Input Format:
+-------------
+Line-1: An integer n , size of Paramapadasopanam.
+Next N lines: N space separated integers, either -1 or 
+              an integer between 1 to n*n. 
+
+Output Format:
+--------------
+Print an integer, least number of rolls required for shakuni to win.
+
+
+Sample Input-1:
+---------------
+6
+-1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1
+-1 -1 -1 -1 -1 -1
+-1 35 -1 -1 13 -1
+-1 -1 -1 -1 -1 -1
+-1 15 -1 -1 -1 -1
+
+Sample Output-1:
+----------------
+4
+
+Explanation: 
+------------
+At the beginning, you start at square 1.
+Roll the dice to land at square 2, and must take the ladder to square 15.
+Roll the dice to land at square 17, and must take the snake to square 13.
+Roll the dice to land at square 14, and must take the ladder to square 35.
+Roll the dice to land at square 36, Shakuni Won.
+Total number of rolls are 4.
+
+
+#################################################################################################################
+
+
+Mr Sudhakar is playing a game on checkerboard of size INF*INF (INF -infinity), 
+where the indices starts from (-INF,-INF) and ends at (INF,INF). In one step, 
+he can move the box from position (p,q) to one of the following positions in L 
+shape like as follows: 
+	- (p-2, q-1), (p-2, q+1), (p+2, q-1), (p+2, q+1)
+	- (p-1, q+2), (p+1, q+2), (p-1, q-2), (p+1, q-2)
+
+Initially the box is at (0,0) position, and need to move the box to position (m,n).
+You will be given two integers m and n indicates the position(m,n).
+
+Now your task is to help by Mr Sudhakar to find the minimum number of steps 
+required to move the box from (0,0) to (m,n).
+
+
+Input Format:
+-----------------
+Two space separated integers, m and n, position.
+
+Output Format:
+------------------
+Print an integer, minimum number of steps to reach (m,n).
+
+
+Sample Input-1:
+---------------
+2 4
+
+Sample Output-1:
+----------------
+2
+
+Explanation:
+-------------
+Initially, you are at (0,0) position, you can reach (2,4) as follows:
+(0,0) -> (1, 2) -> (2, 4) 
+
+
+Sample Input-2:
+---------------
+4 7
+
+Sample Output-2:
+----------------
+5
+
+Explanation:
+------------
+Initially, you are at (0,0) position, you can reach (4,7) as follows:
+(0,0) -> (1, 2) -> (2, 4) -> (1, 6) -> (3, 5) -> (4, 7)
+
+
+#################################################################################################################
+
+A system is designed to distribute even-sized allocations for a given 
+resourceLimit. The goal is to maximize the number of unique allocations 
+while ensuring that their sum equals resourceLimit.
+
+Given an integer resourceLimit, split it into a sum of a maximum number of 
+unique positive even integers. The following conditions must be met:
+    - Each allocation must be a unique positive even integer.
+    - The total sum of the integers must equal resourceLimit.
+    - The number of integers in the split must be maximized.
+    
+If it is not possible to split resourceLimit into valid even allocations, 
+return an empty list.
+
+Input Format:
+-------------
+A single integer, resourceLimit (1 ≤ resourceLimit ≤ 10^9).
+
+Output Format:
+--------------
+A list of integers representing the allocations. 
+If no valid allocations exist, return an empty list.
+
+
+Sample Input-1:
+---------------
+12
+
+Sample Output-1:
+----------------
+[2, 4, 6]
+
+Explanation:
+------------
+The possible splits are:
+    - [12] (1 allocation)
+    - [2, 10] (2 allocations)
+    - [2, 4, 6] (3 allocations)
+The split [2, 4, 6] has the maximum number of allocations.
+
+
+Sample Input-2:
+---------------
+7
+
+Sample Output-2:
+----------------
+[]
+
+Explanation: 
+------------
+It's not possible to split 7 into unique positive even integers.
+
+Sample Input-3:
+---------------
+28
+
+Sample Output-3:
+----------------
+[2, 4, 6, 16]
+
+Explanation: 
+The possible splits are:
+    - [2, 26] (2 allocations)
+    - [6, 8, 2, 12] (4 allocations)
+    - [2, 4, 6, 16] (4 allocations)
+
+The split [2, 4, 6, 16] has the maximum number of allocations.
+
+NOTE:
+=====
+Please refer the sample outputs to generate the solution.
+
+
+#################################################################################################################
+
+QUESTION: BACKTRACKING
+------------------------------------------------------
+There are some cubes, and each cube has an alphabet (from A to Z) 
+printed on it. You can construct different, non-empty words using these 
+cubes and each of the word length should be 0 < length <= number of cubes.
+
+You are given a string of alphabets S, 
+Your task is to findout number of possible non-empty distinct words
+
+Input Format:
+-------------
+A string S, consist of A-Z letters only.
+
+Output Format:
+--------------
+Print an integer, number of possible non-empty distinct words.
+
+
+Sample Input-1:
+---------------
+EGG
+
+Sample Output-1:
+----------------
+8
+
+Explanation:
+--------------
+The possible distinct words are "E", "G", "EG", "GG", "GE", "EGG", "GEG", "GGE".
+
+
+Sample Input-2:
+---------------
+MADAM
+
+Sample Output-2:
+----------------
+89
+------------------------------------------------------
+SOLUTION:
+------------------------------------------------------
+private static void backtrack(String s, StringBuilder cur, Set<String> res, boolean[] used) {
+    if (cur.length() > 0) {
+        res.add(cur.toString());
+    }
+    for (int i = 0; i < s.length(); i++) {
+        if (used[i]) continue;
+        used[i] = true;
+        cur.append(s.charAt(i));
+        backtrack(s, cur, res, used);
+        cur.deleteCharAt(cur.length() - 1);
+        used[i] = false;
+    }
+}
+
+private static int count(String s) {
+    Set<String> res = new HashSet<>();
+    boolean[] used = new boolean[s.length()];
+    backtrack(s, new StringBuilder(), res, used);
+    return res.size();
+}
+
+public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String S = sc.next();
+    System.out.println(count(S));
+}
+------------------------------------------------------
