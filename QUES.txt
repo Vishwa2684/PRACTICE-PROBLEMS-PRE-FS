@@ -938,3 +938,20 @@ public static void main(String[] args) {
     System.out.println(count(S));
 }
 ------------------------------------------------------
+ANOTHER METHOD INCLUDES, USING A FREQUENCY MAP OF A STRING:
+------------------------------------------------------
+void backtrack(unordered_map<char, int>& mp, int& res) {
+  res++;
+  for(auto& p: mp) {
+    int x = p.first;
+    int y = p.second;
+    if(y != 0){
+      mp[x]--;
+      backtrack (mp, res);
+      mp[x]++;
+      }
+    }
+}
+------------------------------------------------------
+
+#################################################################################################################
