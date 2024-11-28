@@ -955,3 +955,433 @@ void backtrack(unordered_map<char, int>& mp, int& res) {
 ------------------------------------------------------
 
 #################################################################################################################
+
+You are given a set of N integers, and a value to find F. Initially a variable, 
+'total' is set to 0. You can perform either addition(+) or subtraction(-)
+of every integer from the set to the 'total'. The resultant total should be
+equal to the value F.
+
+Your task is to find out the number of ways, you can make the 'total' equal to
+the value F.
+
+Input Format:
+-------------
+Line-1: Two integers N and F.
+Line-2: N space separated integers 
+
+Output Format:
+--------------
+Print an integer, number of ways.
+
+
+Sample Input:
+---------------
+5 3
+1 1 1 1 1
+
+Sample Output:
+----------------
+5
+
+Explanation:
+------------
+total = -1+1+1+1+1 = 3 -> total=value-F
+total = +1-1+1+1+1 = 3 -> total=value-F
+total = +1+1-1+1+1 = 3 -> total=value-F
+total = +1+1+1-1+1 = 3 -> total=value-F
+total = +1+1+1+1-1 = 3 -> total=value-F
+
+NOTE: + means addition, - means subtraction
+
+
+#################################################################################################################
+
+Mr Ajay Sharma is working woth words.
+He found that few words in the langugage have same meaning.
+Such words are given as a list of pairs as mappedpairs[],
+where mappedpairs[i] = [word1, word2] indicates that word1 and word2 are 
+the words with same meaning.
+
+He is given phrase, and he wants to apply all the mappedpairs[] on the phrase.
+
+Your task is to help Mr.Ajay Sharma to find and return all possible 
+Mapped Phrases generated after applying all the mapped words,
+and print them in lexicographical order.
+
+
+Input Format:
+-------------
+Line-1: An integer N, number of mapped pairs.
+Next N lines: Two space separated words, mappedpair[].
+Last Line: A line of words, the phrase.
+
+Output Format:
+--------------
+Print the list of mapped phrases in sorted order.
+
+
+Sample Input-1:
+---------------
+3
+hi hello
+sweet sugar
+candy chocolate
+hi sam! ram has a sugar candy
+
+Sample Output-1:
+----------------
+[hello sam! he has sugar candy, hello sam! he has sugar chocolate, 
+hello sam! he has sweet candy, hello sam! he has sweet chocolate, 
+hi sam! he has sugar candy, hi sam! he has sugar chocolate, 
+hi sam! he has sweet candy, hi sam! he has sweet chocolate]
+
+
+
+Sample Input-2:
+---------------
+2
+hi hey
+hey hello
+hi how are you
+
+Sample Output-2:
+----------------
+[hello how are you, hey how are you, hi how are you]
+
+#################################################################################################################
+
+/*
+There are N rooms in a row, and all the rooms are locked initially.
+You will be provided the master key. You can use the master key only once, and
+you can unlock any one room and find a key in it of some other room. 
+You have to repeat this process until you can find the keys of the locked rooms. 
+You have to stop this process once you find the key of a room 
+which is already unlocked.
+
+You are given an array of keys[], where i-th room contains the key of key[i]-th
+room and values of keys[] are range from [0..N-1] without duplicates. Your task 
+is to find the maximum number of rooms can be unlocked including the first room.
+
+Input Format:
+-------------
+Line-1: An integer N, number of rooms.
+Line-2: N space separated integers, keys of rooms.
+
+Output Format:
+--------------
+Print an integer result.
+ 
+Sample Input-1:
+---------------
+8
+7 4 6 2 1 0 3 5
+
+Sample Output-1:
+----------------
+3
+
+Explanation:
+-----------
+keys[0] = 7, keys[1] = 4, keys[2] = 6, keys[3] = 2, keys[4] = 1, keys[5] = 0, 
+keys[6] = 3, keys[7]=5.
+
+You can start with Room-0 using the master key, you can open the following rooms:
+  key[0]=7 =>  key[7]=5  =>  key[5]=0
+          or
+  key[2]=6 =>  key[6]=3  =>  key[3]=2
+
+You can unlock maximum 3 rooms.
+
+Sample Input-2:
+---------------
+ 6
+ 3 2 4 0 5 1
+
+ Sample Output-2:
+ ----------------
+ 4
+ 
+Sample Input-3:
+---------------
+5
+0 1 2 3 4
+
+ Sample Output-3:
+----------------
+1
+*/
+
+#################################################################################################################
+
+Ms Manasa is working on numbers; she is fascinated by number factors.
+She is given a number N, she wants to find out all possible ways of 
+obtaining N as multiple of its factors.
+For example given N =12
+can be written as multiple of 2,3 and 4.
+and the ways to obtains 12 from ots factors are: 2*2*3, 2*6, 3*4
+
+Your task is to help Ms Manasa to find the all possible ways of obtaining N 
+from its factors and return all the possible ways as shown in the samples.
+
+Input Format:
+-------------
+An integer N, value of N.
+
+Output Format:
+--------------
+Print the list of possiblilties.
+
+
+Sample Input-1:
+---------------
+12
+
+Sample Output-1:
+----------------
+[[2, 2, 3], [2, 6], [3, 4]]
+
+
+Sample Input-2:
+---------------
+16
+
+Sample Output-2:
+----------------
+[[2, 2, 2, 2], [2, 2, 4], [2, 8], [4, 4]]
+
+
+Sample Input-3:
+---------------
+32
+
+Sample Output-3:
+----------------
+[[2, 2, 2, 2, 2], [2, 2, 2, 4], [2, 2, 8], [2, 4, 4], [2, 16], [4, 8]]
+
+#################################################################################################################
+
+Given a nokia phone,with the following dialpad.
+		1 2 3
+		4 5 6
+		7 8 9
+		* 0 #
+And You are given an L band to dial the number,  
+Using the L band you can dial the number as follows, 
+You can start with any digit,
+	if you are at digit 1, next digit you can choose {6,8}
+	if you are at digit 2, next digit you can choose {7,9}
+	if you are at digit 3, next digit you can choose {4,8}
+	and so on..
+
+Now your task is to find how many distinct numbers of length N you can dial.
+
+Note: Numbers should contain only digits, no {* , #}.
+Answer is modulo 1000000007.
+
+Input Format:
+-----------------
+An integer N, length of numbers
+ 
+Output Format:
+------------------
+Print an integer, number of distinct numbers you can dial.
+
+
+Sample Input-1:
+---------------
+1
+
+Sample Output-1:
+----------------
+10
+
+Explanation:
+-------------
+To dial a number of length 1, you can dial all digits.
+
+
+Sample Input-2:
+---------------
+2
+
+Sample Output-2:
+----------------
+20
+
+Explanation:
+------------
+To dial a number of length 2, the possible numbers are
+{04, 06, 16, 18, 27, 29, 34, 38, 40, 43, 49, 60, 61, 67, 72, 76, 81, 83, 92, 94}
+
+Sample Input-3:
+---------------
+5
+
+Sample Output-3:
+----------------
+240
+
+#################################################################################################################
+
+Given an 2D character array, Letters[][], of size r*c.
+You have to construct the word W, using the given array.
+
+Rules to construct the word are as follows:
+	- All the letters of the word W, should be adjacent to each other 
+	in the array Letters(either horizontal or vertical).
+	- You can use each charcater in Letters[][] only once.
+
+If you are able to construct the word W, return 'true'
+Otherwise 'false'.
+
+Input Format:
+-------------
+Line-1 -> two integers R and C, array size.
+R lines -> C space separated characters.
+Last line -> a string, word W
+
+Output Format:
+--------------
+print the boolean result.
+
+
+Sample Input-1:
+---------------
+3 3
+a b c
+d e f
+g h i
+bad
+
+Sample Output-1:
+----------------
+true
+
+
+Sample Input-2:
+---------------
+3 3
+a b c
+d e f
+g h i
+ace
+
+Sample Output-2:
+----------------
+false
+
+
+Sample Input-3:
+---------------
+3 3
+a b c
+d e f
+g h i
+add
+
+Sample Output-3:
+----------------
+false
+
+#################################################################################################################
+
+Mr Parandhamayya working with words.
+He is given a word W, you need to divide the word into N non-empty parts, 
+such that all the newly formed words should be distinct, and 
+if you append all those words should form original word W.
+
+Your task is to help Mr Parandhamayya to divide the word into N parts,
+such that, the value of N should be maximized, and print N.
+
+Input Format:
+-------------
+Line-1: A string W, a word.
+
+Output Format:
+--------------
+Print an integer result, the value of N.
+
+
+Sample Input-1:
+---------------
+banana
+
+Sample Output-1:
+----------------
+4
+
+Explanation: 
+------------
+One way to divide the word is "b","a","n","ana".
+If you divide it like "b","a","n","an","a".The word "a" will be repeated.
+So it is not allowed to divide like the second way.
+
+
+Sample Input-2:
+---------------
+mississippi
+
+Sample Output-2:
+----------------
+7
+
+Explanation: 
+------------
+One of the way to divide the word is "m","i","s","si","ssi","p","pi".
+
+NOTE: Subsequences are not allowed.
+
+#################################################################################################################
+
+The Pandavas and Kauravas each rule different kingdoms separated by a river. 
+If the two kingdoms are connected, the land will form a square-shaped area. 
+The kingdoms are represented by cells marked with 1, and the river is 
+represented by cells marked with 0.
+
+The Pandavas and Kauravas have decided to build a bridge over the river to 
+improve connectivity between their kingdoms. To minimize the cost of construction, 
+they aim to reduce the length of the bridge. The bridge can only be built on 
+river cells that are connected in the four cardinal directions (up, down, left, 
+and right).
+
+Your task is to help the rulers minimize the number of river cells used for 
+building the bridge, and return the count of river cells occupied.
+
+Input Format:
+-------------
+Line-1: An integer N, size of the land.
+Next N lines: N space separated integers, either 0 or 1. 
+
+Output Format:
+--------------
+Print an integer result.
+
+
+Sample Input-1:
+---------------
+4
+1 1 1 0
+1 0 0 0
+1 0 0 1
+0 0 1 1
+
+Sample Output-1:
+----------------
+2
+
+
+Sample Input-2:
+---------------
+5
+1 1 0 0 0
+1 1 0 0 0
+0 0 0 0 1
+0 0 0 1 1
+0 0 1 1 1
+
+Sample Output-2:
+----------------
+3
+
+
+#################################################################################################################
